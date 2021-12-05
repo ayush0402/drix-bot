@@ -14,6 +14,8 @@ dependencies {
     implementation("net.dv8tion:JDA:5.0.0-alpha.2")
     //dotenv java
     implementation 'io.github.cdimascio:dotenv-java:2.2.0'
+    //org.Json
+    implementation 'org.json:json:20210307'
     testImplementation 'org.junit.jupiter:junit-jupiter-api:5.7.2'
     testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.7.2'
 }

@@ -10,15 +10,6 @@ public class Drix {
     public static void main(String[] args) throws LoginException {
         JDA jda = JDABuilder.createDefault(Config.get("TOKEN")).build();
 
-        jda.addEventListener(new DemoListener());
-    }
-}
-
-class DemoListener extends ListenerAdapter{
-    @Override
-    public void onMessageReceived(@NotNull MessageReceivedEvent event) {
-        if(event.getMessage().getContentRaw().equalsIgnoreCase("hellobot")){
-            event.getChannel().sendMessage("HelloUser!").queue();
-        }
+        jda.addEventListener(new CommandsListener());
     }
 }
