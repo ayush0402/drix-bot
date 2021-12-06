@@ -1,5 +1,6 @@
 package Commands;
 
+import net.dv8tion.jda.api.EmbedBuilder;
 import net.dv8tion.jda.api.events.message.MessageReceivedEvent;
 import org.json.JSONObject;
 
@@ -18,6 +19,8 @@ public class Quotes {
         String quote = obj.getString("content");
         String quoteAuthor = obj.getString("author");
 
-        event.getChannel().sendMessage(event.getAuthor().getAsMention() + " Here is your quote : \n" + "```\n" + quote + "\n\n" + "~" + quoteAuthor + "\n```").queue();
+        EmbedBuilder emb = new EmbedBuilder();
+        emb.setDescription(quote).setFooter(quoteAuthor).setTitle(event.getAuthor().getName()+", here is a quote for you : ");
+        event.getChannel().sendMessageEmbeds(emb.build()).queue();
     }
 }

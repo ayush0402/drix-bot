@@ -1,4 +1,5 @@
 import Commands.*;
+import Commands.Music.*;
 import net.dv8tion.jda.api.events.message.MessageReceivedEvent;
 import net.dv8tion.jda.api.hooks.ListenerAdapter;
 import org.jetbrains.annotations.NotNull;
@@ -29,6 +30,17 @@ public class CommandsListener extends ListenerAdapter {
                 e.printStackTrace();
             }
         }
+        if(input.equalsIgnoreCase(prefix+"meme")){
+            try {
+                Meme.onCall(event);
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
+        if(input.equalsIgnoreCase(prefix+"join")){
+            Join.onCall(event);
+        }
+
 
     }
 }
