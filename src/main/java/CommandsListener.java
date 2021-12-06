@@ -10,11 +10,11 @@ public class CommandsListener extends ListenerAdapter {
 
     @Override
     public void onMessageReceived(@NotNull MessageReceivedEvent event) {
-        String prefix = Config.get("PREFIX");
+        String prefix = "!!";
         String input = event.getMessage().getContentRaw();
 
         if(input.equalsIgnoreCase(prefix + "shutdown")){
-            String owner_id = Config.get("OWNER_ID");
+            String owner_id = "543383004349726732";
             Shutdown.onCall(event,owner_id);
         }
         if(input.equalsIgnoreCase(prefix + "hello")){
