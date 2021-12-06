@@ -36,6 +36,6 @@ build.mustRunAfter test
 
 jar {
     manifest{
-        attributes 'Class-Path': '/libs/Drix-Bot-1.0.SNAPSHOT-all.jar', 'Main-Class': 'Drix'
+        attributes 'Class-Path': '/libs/Drix-Bot-1.0-SNAPSHOT-all.jar', 'Main-Class': 'Drix'
     }
 }
