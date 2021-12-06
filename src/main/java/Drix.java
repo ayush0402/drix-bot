@@ -8,7 +8,7 @@ import javax.security.auth.login.LoginException;
 
 public class Drix {
     public static void main(String[] args) throws LoginException {
-        JDA jda = JDABuilder.createDefault("OTE3MTA4MjYwNTY0MjQ2NjMw.Yaz5oA.GCjC3viu674HhbG06_e-pKDaF_k").build();
+        JDA jda = JDABuilder.createDefault(System.getenv().get("TOKEN")).build();
 
         jda.addEventListener(new CommandsListener());
     }
