@@ -25,7 +25,6 @@ public class Play {
 
         String queryString = query.toString();
 
-        event.getChannel().sendMessage(query.toString()).queue();
         if(!isUrl(queryString)){
              queryString = "ytsearch:" + queryString;
         }

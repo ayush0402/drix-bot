@@ -13,6 +13,7 @@ public class Queue {
         emb.setTitle("Queue has "+musicManager.scheduler.queue.size()+" tracks :");
         for (AudioTrack audioTrack : musicManager.scheduler.queue) {
             StringBuilder line = new StringBuilder();
+            line.append("- ");
             line.append(audioTrack.getInfo().title)
                     .append(" ")
                     .append(" by ")
