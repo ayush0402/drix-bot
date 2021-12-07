@@ -9,8 +9,8 @@ import java.util.concurrent.BlockingDeque;
 import java.util.concurrent.LinkedBlockingDeque;
 
 public class TrackScheduler extends AudioEventAdapter {
-    private final AudioPlayer player;
-    private final BlockingDeque<AudioTrack> queue;
+    public final AudioPlayer player;
+    public final BlockingDeque<AudioTrack> queue;
 
     public TrackScheduler(AudioPlayer player){
         this.player = player;
@@ -25,10 +25,14 @@ public class TrackScheduler extends AudioEventAdapter {
     public void nextTrack(){
         this.player.startTrack(this.queue.poll(),false);
     }
+    public void stopTrack(){
+        this.player.stopTrack();
+    }
     @Override
     public void onTrackEnd(AudioPlayer player, AudioTrack track, AudioTrackEndReason endReason) {
         if(endReason.mayStartNext){
             nextTrack();
         }
     }
+
 }

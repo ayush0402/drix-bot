@@ -40,8 +40,17 @@ public class CommandsListener extends ListenerAdapter {
         if(input.equalsIgnoreCase(prefix+"join")){
             Join.onCall(event);
         }
-        if(input.equalsIgnoreCase(prefix+"play")){
+        if(input.startsWith(prefix+"play")){
             Play.onCall(event);
+        }
+        if(input.equalsIgnoreCase(prefix+"stop")){
+            Stop.onCall(event);
+        }
+        if(input.equalsIgnoreCase(prefix+"skip")){
+            Skip.onCall(event);
+        }
+        if(input.equalsIgnoreCase(prefix+"queue")){
+            Queue.onCall(event);
         }
 
 
