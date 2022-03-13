@@ -15,44 +15,46 @@ public class CommandsListener extends ListenerAdapter {
 
         if(input.equalsIgnoreCase(prefix + "shutdown")){
             String owner_id = "543383004349726732";
-            Shutdown.onCall(event,owner_id);
+            ShutdownCommand.onCall(event,owner_id);
         }
         if(input.equalsIgnoreCase(prefix + "hello")){
             Hello.onCall(event);
         }
         if(input.equalsIgnoreCase(prefix+"help")){
-            Help.onCall(event);
+            HelpCommand.onCall(event);
         }
         if(input.equalsIgnoreCase(prefix+"quote")){
             try {
-                Quotes.onCall(event);
+                QuotesCommand.onCall(event);
             } catch (IOException e) {
                 e.printStackTrace();
             }
         }
         if(input.equalsIgnoreCase(prefix+"meme")){
             try {
-                Meme.onCall(event);
+                MemeCommand.onCall(event);
             } catch (IOException e) {
                 e.printStackTrace();
             }
         }
         if(input.equalsIgnoreCase(prefix+"join")){
-            Join.onCall(event);
+            JoinCommand.onCall(event);
         }
         if(input.startsWith(prefix+"play")){
-            Play.onCall(event);
+            PlayCommand.onCall(event);
         }
         if(input.equalsIgnoreCase(prefix+"stop")){
-            Stop.onCall(event);
+            StopCommand.onCall(event);
         }
         if(input.equalsIgnoreCase(prefix+"skip")){
-            Skip.onCall(event);
+            SkipCommand.onCall(event);
         }
         if(input.equalsIgnoreCase(prefix+"queue")){
-            Queue.onCall(event);
+            QueueCommand.onCall(event);
         }
-
+        if(input.equalsIgnoreCase(prefix+"disconnect")){
+            DisconnectCommand.onCall(event);
+        }
 
     }
 }

@@ -6,7 +6,7 @@ import com.sedmelluq.discord.lavaplayer.track.AudioTrack;
 import net.dv8tion.jda.api.EmbedBuilder;
 import net.dv8tion.jda.api.events.message.MessageReceivedEvent;
 
-public class Queue {
+public class QueueCommand {
     public static void onCall(MessageReceivedEvent event) {
         final GuildMusicManager musicManager = PlayerManager.getInstance().getMusicManager(event.getGuild());
         EmbedBuilder emb = new EmbedBuilder();
@@ -20,6 +20,7 @@ public class Queue {
                     .append(audioTrack.getInfo().author);
             emb.appendDescription(line.toString()+"\n");
         }
+        emb.setColor(65535);
         event.getChannel().sendMessageEmbeds(emb.build()).queue();
     }
 }

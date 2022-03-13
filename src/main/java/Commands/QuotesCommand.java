@@ -8,7 +8,7 @@ import java.io.IOException;
 import java.net.URL;
 import java.util.Scanner;
 
-public class Quotes {
+public class QuotesCommand {
     public static void onCall(MessageReceivedEvent event) throws IOException {
         /*
         Should I switch to GSON or Jackson for parsing JSON?

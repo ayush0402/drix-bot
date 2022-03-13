@@ -8,7 +8,7 @@ import java.io.IOException;
 import java.net.URL;
 import java.util.Scanner;
 
-public class Meme {
+public class MemeCommand {
     public static void onCall(MessageReceivedEvent event) throws IOException {
         String apiurl = "https://meme-api.herokuapp.com/gimme";
         String jsonString = new Scanner(new URL(apiurl).openStream(), "UTF-8").useDelimiter("\\A").next();
